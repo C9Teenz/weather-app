@@ -13,6 +13,6 @@ class ConstantData {
     "5": "assets/berawan.png",
     "60": "assets/hujan.png",
     "61": "assets/hujan.png",
-    "95": "assets/hujan.png",
+    "95": "assets/hujan-badai.png",
   };
 }

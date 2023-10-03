@@ -24,7 +24,7 @@ class WeatherCubit extends Cubit<WeatherState> {
         int date = now.day;
         List<WeatherModel> newDatas =
             r.where((element) => element.jamCuaca.day == date).toList();
-        print(newDatas[3].jamCuaca);
+
         emit(_Loaded(newDatas));
       },
     );
@@ -41,7 +41,7 @@ class WeatherCubit extends Cubit<WeatherState> {
 
         List<WeatherModel> newDatas =
             r.where((element) => element.jamCuaca.day == date + 1).toList();
-        print(newDatas[2].toJson());
+ 
         emit(_Loaded(newDatas));
       },
     );

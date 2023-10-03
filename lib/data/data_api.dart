@@ -26,7 +26,7 @@ class DataApi {
         "${ConstantData.baseUrl}/cuaca/wilayah.json",
       );
       List data = response.data;
-      print(data);
+
       return Right(data.map((item) => LocationModel.fromJson(item)).toList());
     } catch (e) {
       return Left('$e');
