@@ -123,7 +123,11 @@ class WeatherWeb extends StatelessWidget {
                                               ),
                                             ],
                                           )
-                                        : Container(),
+                                        : const Text("Pilih Kota",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 16)),
                                     findFn: (dynamic str) async => data,
                                     filterFn: (dynamic item, str) =>
                                         item['kota']
@@ -355,21 +359,21 @@ class WeatherWeb extends StatelessWidget {
                                         );
                                       },
                                       loaded: (model) {
-                                        return Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: model
-                                                .asMap()
-                                                .entries
-                                                .map((e) => WeatherItem(
-                                                    height:
-                                                        MediaQuery.of(context)
-                                                                .size
-                                                                .height *
-                                                            0.2,
-                                                    width: 70,
-                                                    data: e.value))
-                                                .toList());
+                                        return ListView.builder(
+                                          itemBuilder: (context, index) {
+                                            return WeatherItem(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.2,
+                                                width: 70,
+                                                data: model[index]);
+                                          },
+                                          scrollDirection: Axis.horizontal,
+                                          physics:
+                                              const BouncingScrollPhysics(),
+                                          itemCount: model.length,
+                                        );
                                       },
                                       loading: () => const Center(
                                             child: CircularProgressIndicator(),

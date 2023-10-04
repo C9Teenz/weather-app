@@ -22,6 +22,7 @@ class WeatherItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8),
       height: height,
       width: width,
+      margin: const EdgeInsets.only(right: 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
